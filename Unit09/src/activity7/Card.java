@@ -1,4 +1,4 @@
-package activity1;
+package activity7;
 /**
  * Card.java
  *
@@ -32,10 +32,16 @@ public class Card {
 	 * @param cardPointValue an <code>int</code> value
 	 *                  containing the point value of the card
 	 */
+	
+	public Card() {
+		rank = "";
+		suit = "";
+		pointValue = 0;
+	}
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
 		rank = cardRank;
 		suit = cardSuit;
-		cardPointValue = pointValue;
+		pointValue = cardPointValue;
 	}
 
 
@@ -70,9 +76,8 @@ public class Card {
 	 *         false otherwise.
 	 */
 	public boolean matches(Card otherCard) {
-		//if(rank.equals(otherCard.rank()) && suit.equals(otherCard.suit()))
-	if(rank.equals(otherCard.rank()) && suit.equals(otherCard.suit()))return true;
-	else return false;
+		if(rank.equals(otherCard.rank()) && suit.equals(otherCard.suit())) return true;
+		else return false;
 	}
 
 	/**
@@ -87,6 +92,6 @@ public class Card {
 	 */
 	@Override
 	public String toString() {
-		return "The card rank is " + rank + " and the suit is " + suit;
+		return  rank + " of " + suit;
 	}
 }
